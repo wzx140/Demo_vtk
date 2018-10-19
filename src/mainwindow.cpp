@@ -1,16 +1,17 @@
-#include <vtkCylinderSource.h>
-#include <vtkPolyDataMapper.h>
 #include <vtkActor.h>
-#include <vtkRenderer.h>
+#include <vtkCylinderSource.h>
+#include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
-#include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkRenderer.h>
+#include <QtWidgets/QMessageBox>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-        QMainWindow(parent),
-        ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget *parent)
+        : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     auto cylinderSource = vtkSmartPointer<vtkCylinderSource>::New();
     cylinderSource->SetCenter(0.0, 0.0, 0.0);

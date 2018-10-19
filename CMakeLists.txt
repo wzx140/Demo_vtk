@@ -25,7 +25,7 @@ find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
 
-set(QT_FORM_FILES include/mainwindow.h include/ui_mainwindow.h)
+set(QT_FORM_FILES include/mainwindow.h src/mainwindow.ui)
 
 add_executable(${PROJECT_NAME} WIN32 ${SOURCE_FILES} ${QT_FORM_FILES})
 
